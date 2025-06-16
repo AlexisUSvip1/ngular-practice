@@ -1,0 +1,11 @@
+<div class="paginador" *ngIf="totalPages > 1">
+  <button (click)="selectPage(currentPage - 1)" [disabled]="currentPage === 1">Anterior</button>
+
+  <button *ngFor="let page of pages"
+          (click)="selectPage(page)"
+          [class.active]="page === currentPage">
+    {{ page }}
+  </button>
+
+  <button (click)="selectPage(currentPage + 1)" [disabled]="currentPage === totalPages">Siguiente</button>
+</div>

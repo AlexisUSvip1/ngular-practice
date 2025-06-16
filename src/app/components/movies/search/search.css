@@ -1,0 +1,13 @@
+.container-search {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.input-movies {
+  width:90%;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid black
+}

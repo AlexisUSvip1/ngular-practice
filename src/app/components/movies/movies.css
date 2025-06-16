@@ -1,0 +1,114 @@
+.titulo {
+  text-align: center;
+  font-size: 2rem;
+  margin: 20px 0;
+  color: #2c3e50;
+}
+
+.peliculas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  gap: 20px;
+}
+
+.pelicula-card {
+  width: 220px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.pelicula-card:hover {
+  transform: scale(1.05);
+}
+
+.pelicula-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.pelicula-titulo {
+  padding: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333;
+}
+
+.cargando {
+  text-align: center;
+  color: gray;
+  font-style: italic;
+  margin-top: 2rem;
+}
+.container-category {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  margin-left: 12px;
+  margin-top:10px;
+  flex-direction: row;
+}
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.popular { background-color: #1976d2; color: white; }
+.valoradas { background-color: #388e3c; color: white; }
+.estreno { background-color: #f57c00; color: white; }
+.cartelera { background-color: #7b1fa2; color: white; }
+
+.pelicula-info {
+  padding: 10px;
+}
+
+.pelicula-titulo {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 8px 0 4px;
+}
+
+.pelicula-original,
+.pelicula-estreno,
+.pelicula-rating,
+.pelicula-descripcion {
+  font-size: 14px;
+  margin: 2px 0;
+}
+
+.pelicula-descripcion {
+  color: #555;
+  line-height: 1.4;
+}
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button.active {
+  background-color: #1e88e5; /* Color diferente al normal */
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}

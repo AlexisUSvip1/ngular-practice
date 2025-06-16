@@ -11,6 +11,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/animations": "^19.2.14",
     "@angular/common": "^20.0.0",
     "@angular/compiler": "^20.0.0",
     "@angular/core": "^20.0.0",
@@ -20,6 +21,8 @@
     "@angular/router": "^20.0.0",
     "@angular/ssr": "^20.0.2",
     "express": "^5.1.0",
+    "ng-loading-skeleton": "^1.0.12",
+    "ngx-spinner": "^19.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },

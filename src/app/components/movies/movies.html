@@ -1,0 +1,42 @@
+<h2 class="titulo">Películas populares</h2>
+<app-search (filterMovies)="onSearch($event)"/>
+<div class="button-group">
+  <button class="button popular" 
+          [ngClass]="{ active: activeCategory === 'popular' }"
+          (click)="changeCategory('popular')">Populares</button>
+
+  <button class="button valoradas" 
+          [ngClass]="{ active: activeCategory === 'top_rated' }"
+          (click)="changeCategory('top_rated')">Mejor valoradas</button>
+
+  <button class="button estreno" 
+          [ngClass]="{ active: activeCategory === 'upcoming' }"
+          (click)="changeCategory('upcoming')">Próximos estrenos</button>
+
+  <button class="button cartelera" 
+          [ngClass]="{ active: activeCategory === 'now_playing' }"
+          (click)="changeCategory('now_playing')">En cartelera</button>
+</div>
+<ul class="peliculas" *ngIf="movies.length > 0; else loading">
+  <li *ngFor="let movie of movies" class="pelicula-card"  (click)="verDetalle(movie.id)">
+    <div class="image-wrapper">
+      <img [src]="'https://image.tmdb.org/t/p/w500' + movie.backdrop_path"
+           alt="{{ movie.title }}"
+           (load)="onImageLoad(movie.id)" />
+    </div>
+
+    <div class="pelicula-info">
+      <p class="pelicula-titulo">{{ movie.title }}</p>
+      <p class="pelicula-estreno">📅 Estreno: {{ movie.release_date }}</p>
+      <p class="pelicula-rating">⭐ Promedio: {{ movie.vote_average }} ({{ movie.vote_count }} votos)</p>
+
+    </div>
+  </li>
+</ul>
+
+<ng-template #loading>
+  <p class="cargando">Cargando películas...</p>
+</ng-template>
+
+<app-pagination [currentPage]="currentPage" [totalPages]="totalPages"
+(pageChange)="onPageChange($event)">/>
