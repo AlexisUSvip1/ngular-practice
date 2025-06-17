@@ -1,4 +1,8 @@
-<h2 class="titulo">Películas populares</h2>
+<h2 class="titulo">
+  <fa-icon [icon]="'film'" class="icono-titulo"></fa-icon>
+  <span class="categoria">{{ titleMovies }}</span>
+</h2>
+
 <app-search (filterMovies)="onSearch($event)"/>
 <div class="button-group">
   <button class="button popular" 
@@ -19,7 +23,11 @@
 </div>
 <ul class="peliculas" *ngIf="movies.length > 0; else loading">
   <li *ngFor="let movie of movies" class="pelicula-card"  (click)="verDetalle(movie.id)">
+   
     <div class="image-wrapper">
+      <button class="favorite-btn" (click)="favoriteMovie(movie.id); $event.stopPropagation()">
+        <fa-icon [icon]="isFavorite(movie.id) ? 'heart' : ['far', 'heart']"></fa-icon>
+      </button>
       <img [src]="'https://image.tmdb.org/t/p/w500' + movie.backdrop_path"
            alt="{{ movie.title }}"
            (load)="onImageLoad(movie.id)" />

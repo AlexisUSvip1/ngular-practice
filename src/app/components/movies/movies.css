@@ -108,7 +108,40 @@
 }
 
 .button.active {
-  background-color: #1e88e5; /* Color diferente al normal */
+  background-color: #000000; /* Color diferente al normal */
   color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.favorite-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 10;
+  display: block; /* Asegura que esté visible siempre */
+}
+
+
+.favorite-icon {
+  color: #e74c3c;
+  font-size: 24px;
+}
+.image-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.image-wrapper:hover .favorite-btn {
+  display: block;
+}
+
+.favorite-btn fa-icon {
+  font-size: 20px;
+  color: #e74c3c; /* Rojo corazón */
 }
